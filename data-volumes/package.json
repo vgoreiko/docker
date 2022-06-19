@@ -8,5 +8,11 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1"
+  },
+  "scripts": {
+    "docker:build": "docker build -t feedback-node:volumes . ",
+    "docker:run": "docker run -d -p 3030:80 --rm --name feedback-app -v feedback:/app/feedback feedback-node:volumes",
+    "docker:stop": "docker stop feedback-app",
+    "docker:volume:remove": "docker volume rm feedback"
   }
 }
