@@ -95,7 +95,8 @@ mongoose.connect(
       console.error(err);
     } else {
       console.log('CONNECTED TO MONGODB');
-      app.listen(process.env.PORT || 3000);
+      console.log('process.env.PORT:', process.env.PORT);
+      app.listen(process.env.PORT || 4001);
     }
   }
 );

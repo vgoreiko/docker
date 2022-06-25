@@ -15,7 +15,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "docker:build:frontend": "docker build -t multi-frontend .",
-    "docker:run:frontend": "docker run -it -p 4000:3000 --rm --name multi-frontend-app multi-frontend"
+    "docker:run:frontend": "docker run -it -p 3000:3000 --rm --name multi-frontend-app multi-frontend"
   },
   "eslintConfig": {
     "extends": [
