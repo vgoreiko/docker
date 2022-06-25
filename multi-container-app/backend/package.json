@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "docker:create:network": "docker network create multi-network",
-    "docker:run:db": "docker run --name multi-mongodb --rm --network multi-network -d -p 27017:27017 mongo",
+    "docker:run:db": "docker run --name multi-mongodb -v data:/data/db --env-file ./.env.mongo --rm --network multi-network -d -p 27017:27017 mongo",
     "docker:build:backend": "docker build -t multi-backend .",
     "docker:run:backend": "docker run -it --rm -p 4001:4001 --network multi-network --name multi-backend-app multi-backend"
   },

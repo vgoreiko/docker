@@ -83,8 +83,9 @@ app.delete('/goals/:id', async (req, res) => {
   }
 });
 
+console.log(`mongodb://${process.env.MONGO_INITDB_ROOT_USERNAME}:${process.env.MONGO_INITDB_ROOT_PASSWORD}@multi-mongodb:27017/course-goals?authSource=admin`)
 mongoose.connect(
-  'mongodb://multi-mongodb:27017/course-goals',
+  `mongodb://${process.env.MONGO_INITDB_ROOT_USERNAME}:${process.env.MONGO_INITDB_ROOT_PASSWORD}@multi-mongodb:27017/course-goals?authSource=admin`,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
